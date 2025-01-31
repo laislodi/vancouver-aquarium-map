@@ -28,13 +28,96 @@ h1 {
   height: 75vh;
 }
 
-.gm-style-iw-d {
-  color: #000000;
+.drop {
+  animation: drop 0.3s linear forwards var(--delay-time);
 }
 
-svg {
-  background-color: #ffffff77;
+.property {
+  align-items: center;
+  border-radius: 50%;
+  color: #263238;
+  display: flex;
+  font-size: 1rem;
+  gap: 15px;
+  height: 30px;
+  justify-content: center;
   padding: 4px;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 30px;
+}
+
+.property::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid transparent;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 95%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-out;
+  width: 0;
+  z-index: 1;
+}
+
+.property .icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+  padding: 12px;
+  background-color: #ffffff77;
   border: 2px solid #000000;
   border-radius: 50%;
+}
+
+.property .icon svg {
+  height: 50px;
+  width: auto;
+}
+
+.property .details {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+.property .description {
+  color: #808080;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+
+.property .title {
+  font-size: 1.1rem;
+}
+
+/*
+ * Property styles in highlighted state.
+ */
+.property.highlight {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border: rgba(0, 0, 0, 0.5) 2px solid;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  height: auto;
+  padding: 8px 15px;
+  width: 300px;
+}
+
+.property.highlight::after {
+  border-top: 9px solid #FFFFFF;
+}
+
+.property.highlight .details {
+  display: flex;
+}
+
+.property.highlight .icon svg {
+  width: 50px;
+  height: 50px;
 }
