@@ -24,12 +24,18 @@ h1 {
   padding: 0 3rem;
 }
 
-#map {
-  height: 75vh;
+h3 {
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0 3rem;
 }
 
-.drop {
-  animation: drop 0.3s linear forwards var(--delay-time);
+#map {
+  height: 75vh;
 }
 
 .property {
